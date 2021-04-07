@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use Illuminate\Http\Request, App\Http\Controllers\Controller;
+use Illuminate\Http\Request, 
+App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
 
     public function index()
     {
-        return view('frontend.faqihym');
+        return view('frontend.home');
         }
 }

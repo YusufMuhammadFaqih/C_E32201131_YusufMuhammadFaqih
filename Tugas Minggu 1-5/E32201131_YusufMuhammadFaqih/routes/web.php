@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FaqihController;
+use app\Http\Controllers\FaqihController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,9 +13,9 @@ use App\Http\Controllers\FaqihController;
 |
 */
 
-/* Route::get('/', function () {
+/*Route::get('/', function () {
   return view('welcome');
-
+});
 Route::get('/faqih', function () {
     return 'Yusuf Muhammad Faqih';
 });
@@ -33,14 +33,13 @@ Route::get('/image', function () {
     return view('gambar');
 });*/
 
-//Route::get('user', [FaqihController::class, 'index']);
-Route::resource('user', FaqihController::class);
+/*Route::get('user', [HomeController::class, 'index']);
+Route::resource('user', HomeController::class);
 
-/*Route::get("/Faqih", function(){
+Route::get("/Faqih", function(){
     return view("Faqih");
-});*/ 
+});*/
 
-Route::group(['namespace' => 'Frontend'], function()
-    {
-        Route::resource('home', 'HomeController');
+Route::group(['namespace' => 'frontend'], function(){
+     Route::resource('home', 'HomeController');
 });
