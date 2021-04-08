@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use app\Http\Controllers\FaqihController;
+use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Backend\DashboardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,10 +14,10 @@ use app\Http\Controllers\FaqihController;
 |
 */
 
-/*Route::get('/', function () {
+Route::get('/', function () {
   return view('welcome');
 });
-Route::get('/faqih', function () {
+/*Route::get('/faqih', function () {
     return 'Yusuf Muhammad Faqih';
 });
 
@@ -41,5 +42,12 @@ Route::get("/Faqih", function(){
 });*/
 
 Route::group(['namespace' => 'frontend'], function(){
-     Route::resource('home', 'HomeController');
+Route::get('home', [HomeController::class, 'index']);
 });
+
+
+Route::group(['namespace' => 'backend'], function(){
+    Route::get('dashboard', [DashboardController::class, 'index']);
+ });
+    
+    
